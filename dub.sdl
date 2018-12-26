@@ -1,0 +1,28 @@
+name "bindbc-zstandard"
+description "Dynamic and static bindings to SDL2 and its satellite libraries, compatible with -betterC, @nogc, and nothrow."
+homepage ""
+authors "Mike Parker"
+license "Boost"
+
+targetType "staticLibrary"
+targetPath "lib"
+targetName "BindBC_zstandard"
+
+configuration "dynamic" {
+    dependency "bindbc-loader" version="~>0.1.0"
+}
+
+configuration "dynamicBC" {
+    dependency "bindbc-loader" version="~>0.1.0"
+    subConfiguration "bindbc-loader" "yesBC"
+}
+
+configuration "static" {
+    versions "BindZSTD_Static"
+}
+
+configuration "staticBC" {
+    dflags "-betterC"
+    versions "BindZSTD_Static"
+    excludedSourceFiles "source/bindbc/zstandard/dynload.d"
+}
