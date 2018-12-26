@@ -1,3 +1,13 @@
+/*
+	bindbc/zstandard/dynload.d
+
+	Dynamically binds all function
+
+	Licensed under the Boost Software License
+
+	2018 - Laszlo Szeremi
+*/
+
 module bindbc.zstandard.dynload;
 
 version(BindZSTD_Static){

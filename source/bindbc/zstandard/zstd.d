@@ -1,3 +1,13 @@
+/*
+	bindbc/zstandard/zstd.d
+
+	Translates al dynamic and most static functions from zstd.h
+
+	Licensed under the Boost Software License
+
+	2018 - Laszlo Szeremi
+*/
+
 module bindbc.zstandard.zstd;
 
 enum ZSTD_nextInputType_e { 

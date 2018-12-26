@@ -1,7 +1,7 @@
 name "bindbc-zstandard"
 description "Dynamic and static bindings to SDL2 and its satellite libraries, compatible with -betterC, @nogc, and nothrow."
 homepage ""
-authors "Mike Parker"
+authors "Laszlo Szeremi"
 license "Boost"
 
 targetType "staticLibrary"
