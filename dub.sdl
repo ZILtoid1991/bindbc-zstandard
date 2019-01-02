@@ -1,5 +1,5 @@
 name "bindbc-zstandard"
-description "Dynamic and static bindings to SDL2 and its satellite libraries, compatible with -betterC, @nogc, and nothrow."
+description "Configurable dynamic and static binding to Facebook's zstandard compression library."
 homepage ""
 authors "Laszlo Szeremi"
 license "Boost"
