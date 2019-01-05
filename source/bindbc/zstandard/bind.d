@@ -1,2 +1,0 @@
-module bindbc.zstandard.bind;
-

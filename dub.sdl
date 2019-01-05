@@ -4,6 +4,7 @@ homepage ""
 authors "Laszlo Szeremi"
 license "Boost"
 
+sourcePaths "source/"
 targetType "staticLibrary"
 targetPath "lib"
 targetName "BindBC_zstandard"
@@ -25,4 +26,10 @@ configuration "staticBC" {
     dflags "-betterC"
     versions "BindZSTD_Static"
     excludedSourceFiles "source/bindbc/zstandard/dynload.d"
+}
+
+buildType "unittest" {
+    buildOptions "unittests" "debugMode" "debugInfo"
+    sourceFiles "test.d"
+    sourcePaths "source/"
 }
