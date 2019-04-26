@@ -99,9 +99,37 @@ ZSTDSupport loadZstandard(const(char)* libName){
 	lib.bindSymbol(cast(void**)&ZSTD_decompressStream, "ZSTD_decompressStream");
 	lib.bindSymbol(cast(void**)&ZSTD_DStreamInSize, "ZSTD_DStreamInSize");
 	lib.bindSymbol(cast(void**)&ZSTD_DStreamOutSize, "ZSTD_DStreamOutSize");
-	loadedVersion = ZSTDSupport.ZSTD1_3_7;
-	if(errCount != errorCount){
+	loadedVersion = ZSTDSupport.ZSTD1_3;
+	if(errCount != errorCount)
 		return ZSTDSupport.badLibrary;
+	version(zstd1_04){
+		lib.bindSymbol(cast(void**)&ZSTD_compressStream2, "ZSTD_compressStream2");
+
+		lib.bindSymbol(cast(void**)&ZSTD_cParam_getBounds, "ZSTD_cParam_getBounds");
+		lib.bindSymbol(cast(void**)&ZSTD_CCtx_setParameter, "ZSTD_CCtx_setParameter");
+		lib.bindSymbol(cast(void**)&ZSTD_CCtx_setPledgedSrcSize, "ZSTD_CCtx_setPledgedSrcSize");
+		lib.bindSymbol(cast(void**)&ZSTD_CCtx_reset, "ZSTD_CCtx_reset");
+		lib.bindSymbol(cast(void**)&ZSTD_compress2, "ZSTD_compress2");
+		lib.bindSymbol(cast(void**)&ZSTD_getDictID_fromDict, "ZSTD_getDictID_fromDict");
+		lib.bindSymbol(cast(void**)&ZSTD_getDictID_fromDDict, "ZSTD_getDictID_fromDDict");
+		lib.bindSymbol(cast(void**)&ZSTD_CCtx_loadDictionary, "ZSTD_CCtx_loadDictionary");
+		lib.bindSymbol(cast(void**)&ZSTD_DCtx_reset, "ZSTD_DCtx_reset");
+		lib.bindSymbol(cast(void**)&ZSTD_CCtx_refCDict, "ZSTD_CCtx_refCDict");
+		lib.bindSymbol(cast(void**)&ZSTD_CCtx_refPrefix, "ZSTD_CCtx_refPrefix");
+		lib.bindSymbol(cast(void**)&ZSTD_DCtx_loadDictionary, "ZSTD_DCtx_loadDictionary");
+		lib.bindSymbol(cast(void**)&ZSTD_DCtx_refDDict, "ZSTD_DCtx_refDDict");
+		lib.bindSymbol(cast(void**)&ZSTD_DCtx_refPrefix, "ZSTD_DCtx_refPrefix");
+		lib.bindSymbol(cast(void**)&ZSTD_sizeof_CCtx, "ZSTD_sizeof_CCtx");
+		lib.bindSymbol(cast(void**)&ZSTD_sizeof_DCtx, "ZSTD_sizeof_DCtx");
+		lib.bindSymbol(cast(void**)&ZSTD_sizeof_CStream, "ZSTD_sizeof_CStream");
+		lib.bindSymbol(cast(void**)&ZSTD_sizeof_DStream, "ZSTD_sizeof_DStream");
+		lib.bindSymbol(cast(void**)&ZSTD_sizeof_CDict, "ZSTD_sizeof_CDict");
+		lib.bindSymbol(cast(void**)&ZSTD_sizeof_DDict, "ZSTD_sizeof_DDict");
+		loadedVersion = ZSTDSupport.ZSTD1_4;
+		if(errCount != errorCount)
+			ZSTDSupport.ZSTD1_3;
 	}
+	
+	
 	return loadedVersion;
 }

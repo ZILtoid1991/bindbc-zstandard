@@ -10,7 +10,7 @@ import std.conv : to;
  */
 
 unittest{
-	if(loadZstandard("G:/Developing/zstd-v1.3.7-win32/dll/libzstd.dll") == ZSTDSupport.noLibrary){
+	if(loadZstandard() == ZSTDSupport.noLibrary){
 		const(ErrorInfo)[] errorlist = errors;
 		foreach(e; errorlist){
 			writeln(to!string(e.error));

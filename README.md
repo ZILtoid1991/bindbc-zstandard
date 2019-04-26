@@ -7,5 +7,5 @@ Created by Laszlo Szeremi (laszloszeremi@outlook.com https://twitter.com/ziltoid
 
 * DLL works without an issue under Windows.
 * Other OSes are untested, and you'll need to specify the shared object files due to my lack of knowledge on their default locations. Feel free to make a pull request in that regard.
-* 1.3.7 is the version it has matched for. Very likely to work with either newer or older versions of the dynamic library, might be a few issues with the static only versions.
-* Certain static-only functions haven't been linked.
+* Versions 1.3 and onwards are supported. Older versions are not planned.
+* Certain static-only functions haven't been linked. If you need them, you can add them.

@@ -4,5 +4,6 @@ module bindbc.zstandard.config;
 enum ZSTDSupport{
 	noLibrary,
 	badLibrary,
-	ZSTD1_3_7	=	1_03_07,
+	ZSTD1_3	=	1_03,
+	ZSTD1_4 =	1_04,
 }
