@@ -9,11 +9,6 @@ targetType "staticLibrary"
 targetPath "lib"
 targetName "BindBC_zstandard"
 
-configuration "unittest-dyn" {
-    dependency "bindbc-loader" version="~>0.1.0"
-    versions "zstd1_04"
-}
-
 configuration "dynamic" {
     dependency "bindbc-loader" version="~>0.1.0"
 }
@@ -37,4 +32,5 @@ buildType "unittest" {
     buildOptions "unittests" "debugMode" "debugInfo"
     sourceFiles "test.d"
     sourcePaths "source/"
+    versions "zstd1_04"
 }
