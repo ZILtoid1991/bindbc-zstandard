@@ -526,7 +526,7 @@ extern(C) @nogc nothrow:
 		alias pZSTD_DStreamInSize = size_t function();
 		alias pZSTD_DStreamOutSize = size_t function();
 		version(zstd1_04){
-			alias pZSTD_compressStream2 = size_t function(STD_CCtx* cctx, ZSTD_outBuffer* output, ZSTD_inBuffer* input, 
+			alias pZSTD_compressStream2 = size_t function(ZSTD_CCtx* cctx, ZSTD_outBuffer* output, ZSTD_inBuffer* input, 
 					ZSTD_EndDirective endOp);
 
 			alias pZSTD_cParam_getBounds = ZSTD_bounds function(ZSTD_cParameter cParam);
