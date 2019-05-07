@@ -9,10 +9,6 @@ targetType "staticLibrary"
 targetPath "lib"
 targetName "BindBC_zstandard"
 
-configuration "ver1_04"{
-    versions "zstd1_04"
-}
-
 configuration "dynamic" {
     dependency "bindbc-loader" version="~>0.1.0"
 }
