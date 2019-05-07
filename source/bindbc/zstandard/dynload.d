@@ -127,7 +127,7 @@ ZSTDSupport loadZstandard(const(char)* libName){
 		lib.bindSymbol(cast(void**)&ZSTD_sizeof_DDict, "ZSTD_sizeof_DDict");
 		loadedVersion = ZSTDSupport.ZSTD1_4;
 		if(errCount != errorCount)
-			ZSTDSupport.ZSTD1_3;
+			return ZSTDSupport.ZSTD1_3;
 	}
 	
 	
